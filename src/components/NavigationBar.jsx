@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import HomeComponent from './Home';
+import Home from './Home';
 export default function NavigationBarComponent() {
     return(
         
@@ -19,7 +19,7 @@ export default function NavigationBarComponent() {
             </div> */}
     
             <nav className="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-                <Link to="/" element={<HomeComponent/>} className="navbar-brand ms-4 ms-lg-0">
+                <Link to="/" element={<Home/>} className="navbar-brand ms-4 ms-lg-0">
                     <h1 className="fw-bold text-primary m-0">F<span className="text-secondary">oo</span>dy</h1>
                 </Link>
                 
@@ -28,7 +28,7 @@ export default function NavigationBarComponent() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto p-4 p-lg-0">
-                        <Link to="/" element={<HomeComponent/>} className="nav-item nav-link active">Home</Link>
+                        <Link to="/" element={<Home/>} className="nav-item nav-link active">Home</Link>
                         <Link to="/about" className="nav-item nav-link">About Us</Link>
                         <Link href="product.html" className="nav-item nav-link">Products</Link>
                         <div className="nav-item dropdown">
