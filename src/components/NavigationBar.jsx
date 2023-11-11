@@ -37,7 +37,6 @@ export default function NavigationBarComponent() {
                                 <a href="blog.html" className="dropdown-item">Blog Grid</a>
                                 <a href="feature.html" className="dropdown-item">Our Features</a>
                                 <a href="testimonial.html" className="dropdown-item">Testimonial</a>
-                                <a href="404.html" className="dropdown-item">404 Page</a>
                             </div>
                         </div>
                         <a href="contact.html" className="nav-item nav-link">Contact Us</a>
