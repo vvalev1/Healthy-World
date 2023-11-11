@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import Home from "./Home"
-export default function ErrorComponent() {
+export default function NotFound() {
     return(
         <div className="container-xxl py-6 wow fadeInUp" data-wow-delay="0.1s">
             <div className="container text-center">
