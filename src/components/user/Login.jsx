@@ -1,12 +1,13 @@
 import styles from './Login.module.css';
+import Header from "../Header";
 export default function Login() {
     return (
-        
-            <div className="container-fluid bg-light bg-icon my-5 py-6">
+        <>
+            <Header 
+                pageName="Login"
+            />
+            <div className="container-fluid bg-light bg-icon my-2 py-6">
                 <div className="container">
-                    <div className="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <h1 className="display-5 mb-3">Login</h1>
-                    </div>
                     <form>
                         <div className="g-5 align-items-center">
                             <div className="form-group">
@@ -23,6 +24,6 @@ export default function Login() {
                     </form>
                 </div>
             </div>
-        
+        </>
     );
 }

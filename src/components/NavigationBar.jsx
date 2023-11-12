@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Home from './Home';
+import Login from './user/Login';
 export default function NavigationBarComponent() {
     return(
         
@@ -20,7 +21,7 @@ export default function NavigationBarComponent() {
     
             <nav className="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
                 <Link to="/" element={<Home/>} className="navbar-brand ms-4 ms-lg-0">
-                    <h1 className="fw-bold text-primary m-0">F<span className="text-secondary">oo</span>dy</h1>
+                    <h1 className="fw-bold text-primary m-0">H<span className="text-secondary">ea</span>lthy W<span className="text-secondary">or</span>ld</h1>
                 </Link>
                 
                 <button type="button" className="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -31,6 +32,7 @@ export default function NavigationBarComponent() {
                         <Link to="/" element={<Home/>} className="nav-item nav-link active">Home</Link>
                         <Link to="/about" className="nav-item nav-link">About Us</Link>
                         <Link href="product.html" className="nav-item nav-link">Products</Link>
+                        <Link to="/login" element={<Login/>} className="nav-item nav-link">Login</Link>
                         <div className="nav-item dropdown">
                             <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div className="dropdown-menu m-0">
