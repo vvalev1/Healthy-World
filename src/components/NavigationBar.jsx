@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Home from './Home';
 import Login from './user/Login';
+import Register from './user/Register';
 export default function NavigationBarComponent() {
     return(
         
@@ -33,6 +34,7 @@ export default function NavigationBarComponent() {
                         <Link to="/about" className="nav-item nav-link">About Us</Link>
                         <Link href="product.html" className="nav-item nav-link">Products</Link>
                         <Link to="/login" element={<Login/>} className="nav-item nav-link">Login</Link>
+                        <Link to="/register" element={<Register/>} className="nav-item nav-link">Register</Link>
                         <div className="nav-item dropdown">
                             <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div className="dropdown-menu m-0">
