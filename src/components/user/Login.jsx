@@ -20,7 +20,7 @@ export default function Login() {
                             </div>
                         
                         </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
+                        <button type="submit" className="btn btn-primary rounded-pill py-2">Login</button>
                     </form>
                 </div>
             </div>
