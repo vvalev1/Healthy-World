@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import Home from './Home';
 import Login from './user/Login';
 import Register from './user/Register';
+import AddItem from './FruitsAndVegatables/AddItem';
+import Products from './FruitsAndVegatables/Products';
+import About from './About';
+
 export default function NavigationBarComponent() {
     return(
         
@@ -31,19 +35,11 @@ export default function NavigationBarComponent() {
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto p-4 p-lg-0">
                         <Link to="/" element={<Home/>} className="nav-item nav-link active">Home</Link>
-                        <Link to="/about" className="nav-item nav-link">About Us</Link>
-                        <Link href="product.html" className="nav-item nav-link">Products</Link>
+                        <Link to="/about" element={<About/>} className="nav-item nav-link">About Us</Link>
+                        <Link to="/products" element={<Products/>} className="nav-item nav-link">Products</Link>
+                        <Link to="/create" element={<AddItem/>} className="nav-item nav-link">Add Item</Link>
                         <Link to="/login" element={<Login/>} className="nav-item nav-link">Login</Link>
                         <Link to="/register" element={<Register/>} className="nav-item nav-link">Register</Link>
-                        <div className="nav-item dropdown">
-                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div className="dropdown-menu m-0">
-                                <a href="blog.html" className="dropdown-item">Blog Grid</a>
-                                <a href="feature.html" className="dropdown-item">Our Features</a>
-                                <a href="testimonial.html" className="dropdown-item">Testimonial</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" className="nav-item nav-link">Contact Us</a>
                     </div>
                     <div className="d-none d-lg-flex ms-2">
                         <a className="btn-sm-square bg-white rounded-circle ms-3" href="">
