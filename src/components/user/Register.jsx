@@ -6,7 +6,7 @@ export default function Register() {
             <Header 
                 pageName="Register"
             />
-            <div className="container-fluid bg-light bg-icon my-2 py-4">
+            <div className="container-fluid bg-light py-4">
                 <div className="container">
                     <form>
                         <div className="g-5 align-items-center">
