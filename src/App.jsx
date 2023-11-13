@@ -8,6 +8,7 @@ import Login from "./components/user/Login";
 import Register from "./components/user/Register";
 import AddItem from "./components/FruitsAndVegatables/AddItem";
 import Products from "./components/FruitsAndVegatables/Products";
+import Details from "./components/FruitsAndVegatables/Details";
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <Route path="/register" element={<Register/>} />
         <Route path="/create" element={<AddItem/>} />
         <Route path="/products" element={<Products/>} />
+        <Route path="/details" element={<Details/>} />
+
         <Route path="*" element={<NotFound/>} />
       </Routes>
       
