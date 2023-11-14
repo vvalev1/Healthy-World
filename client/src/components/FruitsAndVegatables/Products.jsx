@@ -39,11 +39,10 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
-                                                <Link className="text-body" to="/product/details/:id"><i className="fa fa-eye text-primary me-2"></i>View detail</Link>
+                                                <Link className="text-body" to="/products/details"><i className="fa fa-eye text-primary me-2"></i>View detail</Link>
                                             </small>
                                             <small className="w-50 text-center py-2">
                                                 <a className="text-body" href=""><i className="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
@@ -60,7 +59,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -81,7 +79,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -102,7 +99,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -123,7 +119,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -144,7 +139,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -165,7 +159,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -186,7 +179,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -214,7 +206,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -235,7 +226,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -256,7 +246,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -277,7 +266,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -298,7 +286,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -319,7 +306,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -340,7 +326,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -361,7 +346,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -389,7 +373,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -410,7 +393,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -431,7 +413,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -452,7 +433,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -473,7 +453,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -494,7 +473,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -515,7 +493,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
@@ -536,7 +513,6 @@ export default function Products() {
                                         <div className="text-center p-4">
                                             <a className="d-block h5 mb-2" href="">Fresh Tomato</a>
                                             <span className="text-primary me-1">$19.00</span>
-                                            <span className="text-body text-decoration-line-through">$29.00</span>
                                         </div>
                                         <div className="d-flex border-top">
                                             <small className="w-50 text-center border-end py-2">
