@@ -1,3 +1,4 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from "react-router-dom";
 import HomeComponent from "./components/Home";
 import Footer from "./components/Footer";
@@ -9,6 +10,7 @@ import Register from "./components/user/Register";
 import AddItem from "./components/FruitsAndVegatables/AddItem";
 import Products from "./components/FruitsAndVegatables/Products";
 import Details from "./components/FruitsAndVegatables/Details";
+
 
 
 function App() {

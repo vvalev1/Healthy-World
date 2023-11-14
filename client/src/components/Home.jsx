@@ -1,3 +1,6 @@
+import Products from "./FruitsAndVegatables/Products";
+import { Link } from "react-router-dom"
+
 export default function HomeComponent() {
     return(
         <div className="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -24,8 +27,7 @@ export default function HomeComponent() {
                                 <div className="row justify-content-start">
                                     <div className="col-lg-7">
                                         <h1 className="display-2 mb-5 animated slideInDown">Natural Food Is Always Healthy</h1>
-                                        <a hfef="" className="btn btn-primary rounded-pill py-sm-3 px-sm-5">Products</a>
-                                        <a hfef="" className="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Services</a>
+                                        <Link to="/products" element={<Products/>} className="btn btn-success rounded-pill py-sm-3 px-sm-5">Products</Link>
                                     </div>
                                 </div>
                             </div>

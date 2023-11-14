@@ -7,35 +7,35 @@ export default function AddItem() {
                 pageName="Add Item"
             />
             <div className="container-fluid bg-light py-4">
-                <div className="container">
+                <div className="container bg-icon">
                     <form>
                         <div className="g-5">
-                            <div className="form-group">
-                                <label htmlFor="itemName">Item name:</label>
+                            <div className="mb-3">
+                                <label htmlFor="itemName" className="form-label">Item name:</label>
                                 <input type="text" id="itemName" name="itemName" aria-describedby="emailHelp" placeholder="Item name" autoComplete="true" />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="price">Price:</label>
+                            <div className="mb-3">
+                                <label htmlFor="price" className="form-label">Price:</label>
                                 <input type="text" id="price" name="price" placeholder="price" autoComplete="true" />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="image">Image Url:</label>
+                            <div className="mb-3">
+                                <label htmlFor="image" className="form-label">Image Url:</label>
                                 <input type="url" id="image" name="image" placeholder="image" autoComplete="true" />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="country">Country:</label>
+                            <div className="mb-3">
+                                <label htmlFor="country" className="form-label">Country:</label>
                                 <input type="text" id="country" name="country" placeholder="country" autoComplete="true" />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="quantity">Quantity in order:</label>
+                            <div className="mb-3">
+                                <label htmlFor="quantity" className="form-label">Quantity in order:</label>
                                 <input type="number" id="quantity" name="quantity" placeholder="quantity" autoComplete="true" />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="nutrition">Nutrition:</label>
+                            <div className="mb-3">
+                                <label htmlFor="nutrition" className="form-label">Nutrition:</label>
                                 <input type="text" id="nutrition" name="nutrition" placeholder="nutrition" autoComplete="true" />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="description">Description:</label>
+                            <div className="mb-3">
+                                <label htmlFor="description" className="form-label">Description:</label>
                                 <textarea className="form-group" id="description" name="description"></textarea>
                             </div>
                         </div>
@@ -43,6 +43,7 @@ export default function AddItem() {
                     </form>
                 </div>
             </div>
+
         </>
     );
 }
