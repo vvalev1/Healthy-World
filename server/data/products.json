@@ -1,0 +1,11 @@
+{
+    "ec367c6b-2d3f-436c-92d3-b598c3b15b50": {
+        "name": "Melon",
+        "price": "55.00",
+        "imageUrl": "https://media.istockphoto.com/id/153787565/photo/cantaloupe-melon.jpg?s=612x612&w=0&k=20&c=7zt5YtEWW_4UIPkb1s-INkW92ZG5uSy4ubGg2sSaqyI=",
+        "country": "Bulgaria",
+        "quantity": "1",
+        "description": "Melon from Bulgaria! Very good!",
+        "_id": "ec367c6b-2d3f-436c-92d3-b598c3b15b50"
+    }
+}
