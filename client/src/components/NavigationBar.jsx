@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import Home from './Home';
 import Login from './user/Login';
 import Register from './user/Register';
-import AddItem from './FruitsAndVegatables/AddItem';
-import Products from './FruitsAndVegatables/Products';
+import AddItem from './Products/create/AddItem';
+import Products from './Products/Products';
 import About from './About';
 
 export default function NavigationBarComponent() {

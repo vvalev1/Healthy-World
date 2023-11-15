@@ -1,4 +1,4 @@
-import Header from "../Header";
+import Header from "../../Header";
 import styles from "./AddItem.module.css";
 export default function EditItem() {
     return (

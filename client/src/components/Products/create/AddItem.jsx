@@ -1,4 +1,4 @@
-import Header from "../Header";
+import Header from "../../Header";
 import styles from "./AddItem.module.css";
 export default function AddItem() {
     return (
@@ -11,7 +11,7 @@ export default function AddItem() {
                     <form>
                         <div className="g-5">
                             <div className="mb-3">
-                                <label htmlFor="itemName" className="form-label">Item name:</label>
+                                <label htmlFor="itemName" className="form-label">Name:</label>
                                 <input type="text" id="itemName" name="itemName" aria-describedby="emailHelp" placeholder="Item name" autoComplete="true" />
                             </div>
                             <div className="mb-3">
@@ -29,10 +29,6 @@ export default function AddItem() {
                             <div className="mb-3">
                                 <label htmlFor="quantity" className="form-label">Quantity in order:</label>
                                 <input type="number" id="quantity" name="quantity" placeholder="quantity" autoComplete="true" />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="nutrition" className="form-label">Nutrition:</label>
-                                <input type="text" id="nutrition" name="nutrition" placeholder="nutrition" autoComplete="true" />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="description" className="form-label">Description:</label>

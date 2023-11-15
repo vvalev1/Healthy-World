@@ -1,4 +1,4 @@
-import Header from "../Header";
+import Header from "../../Header";
 import styles from "./Details.module.css"
 
 export default function Details() {

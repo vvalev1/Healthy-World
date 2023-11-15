@@ -7,9 +7,9 @@ import NotFound from "./components/NotFound";
 import About from "./components/About";
 import Login from "./components/user/Login";
 import Register from "./components/user/Register";
-import AddItem from "./components/FruitsAndVegatables/AddItem";
-import Products from "./components/FruitsAndVegatables/Products";
-import Details from "./components/FruitsAndVegatables/Details";
+import AddItem from "./components/Products/create/AddItem";
+import Products from "./components/Products/Products";
+import Details from "./components/Products/details/Details";
 
 
 
