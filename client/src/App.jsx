@@ -7,7 +7,7 @@ import NotFound from "./components/NotFound";
 import About from "./components/About";
 import Login from "./components/User/Login";
 import Register from "./components/User/Register";
-import AddItem from "./components/Products/create/AddItem";
+import CreateProduct from "./components/Products/create/CreateProduct";
 import Products from "./components/Products/Products";
 import Details from "./components/Products/details/Details";
 
@@ -24,7 +24,7 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
-        <Route path="/create" element={<AddItem/>} />
+        <Route path="/create" element={<CreateProduct/>} />
         <Route path="/products" element={<Products/>} />
         <Route path="/products/details" element={<Details/>} />
 

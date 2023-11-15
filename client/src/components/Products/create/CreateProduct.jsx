@@ -1,18 +1,27 @@
 import Header from "../../Header";
-import styles from "./AddItem.module.css";
-export default function AddItem() {
+import styles from "./CreateProduct.module.css";
+export default function CreateProduct() {
+    const createProductSubmitHandler = (e) => {
+        e.preventDefault();
+
+        const productData = Object.fromEntries(new FormData(e.currentTarget));
+
+        console.log(productData);
+
+    }
+
     return (
         <>
             <Header 
-                pageName="Add Item"
+                pageName="Create Product"
             />
             <div className="container-fluid bg-light py-4">
                 <div className="container bg-icon">
-                    <form>
+                    <form onSubmit={createProductSubmitHandler}>
                         <div className="g-5">
                             <div className="mb-3">
                                 <label htmlFor="itemName" className="form-label">Name:</label>
-                                <input type="text" id="itemName" name="itemName" aria-describedby="emailHelp" placeholder="Item name" autoComplete="true" />
+                                <input type="text" id="itemName" name="name" aria-describedby="emailHelp" placeholder="Item name" autoComplete="true" />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="price" className="form-label">Price:</label>
@@ -20,7 +29,7 @@ export default function AddItem() {
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="image" className="form-label">Image Url:</label>
-                                <input type="url" id="image" name="image" placeholder="image" autoComplete="true" />
+                                <input type="url" id="image" name="imageUrl" placeholder="image" autoComplete="true" />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="country" className="form-label">Country:</label>
