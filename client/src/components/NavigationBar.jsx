@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Home from './Home';
-import Login from './user/Login';
-import Register from './user/Register';
+import Login from './User/Login';
+import Register from './User/Register';
 import AddItem from './Products/create/AddItem';
 import Products from './Products/Products';
 import About from './About';
