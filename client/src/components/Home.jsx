@@ -1,4 +1,3 @@
-import Products from "./Products/Products";
 import { Link } from "react-router-dom"
 
 export default function HomeComponent() {
@@ -27,7 +26,7 @@ export default function HomeComponent() {
                                 <div className="row justify-content-start">
                                     <div className="col-lg-7">
                                         <h1 className="display-2 mb-5 animated slideInDown">Natural Food Is Always Healthy</h1>
-                                        <Link to="/products" element={<Products/>} className="btn btn-success rounded-pill py-sm-3 px-sm-5">Products</Link>
+                                        <Link to="/products" className="btn btn-success rounded-pill py-sm-3 px-sm-5">Products</Link>
                                     </div>
                                 </div>
                             </div>
