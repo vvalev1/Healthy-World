@@ -32,7 +32,7 @@ export default function NavigationBarComponent() {
                         <Link to="/" className="nav-item nav-link active">Home</Link>
                         <Link to="/about" className="nav-item nav-link">About Us</Link>
                         <Link to="/products" className="nav-item nav-link">Products</Link>
-                        <Link to="/create" className="nav-item nav-link">Add Item</Link>
+                        <Link to="/create" className="nav-item nav-link">Add Product</Link>
                         <Link to="/login" className="nav-item nav-link">Login</Link>
                         <Link to="/register" className="nav-item nav-link">Register</Link>
                     </div>

@@ -1,35 +1,14 @@
 import Header from "../../Header";
-import styles from "./CreateProduct.module.css";
-import * as productService from "../../../services/productService";
-import { useNavigate } from "react-router-dom";
-
-export default function CreateProduct() {
-    const navigate = useNavigate();
-
-    const createProductSubmitHandler = async (e) => {
-        e.preventDefault();
-
-        const productData = Object.fromEntries(new FormData(e.currentTarget));
-
-        try {
-            await productService.create(productData);
-            navigate("/products");
-        } catch (err) {
-            // To implement Error notification
-            console.log(err);
-        }
-
-
-    }
-
+import styles from "./EditProduct.module.css";
+export default function EditProduct() {
     return (
         <>
             <Header
-                pageName="Add Product"
+                pageName="Edit Product"
             />
             <div className="container-fluid bg-light py-4">
                 <div className="container bg-icon">
-                    <form id={styles["create-page"]} onSubmit={createProductSubmitHandler}>
+                    <form id={styles["edit-page"]} >
                         <div className="g-5">
                             <div className={styles["md-2"]}>
                                 <label htmlFor="itemName" className="form-label">Name:</label>
@@ -56,11 +35,10 @@ export default function CreateProduct() {
                                 <textarea className="form-group" id="description" name="description"></textarea>
                             </div>
                         </div>
-                        <button type="submit" className="btn btn-primary rounded-pill py-2 px-1">Add Product</button>
+                        <button type="submit" className="btn btn-primary rounded-pill py-2 px-1">Edit</button>
                     </form>
                 </div>
             </div>
-
         </>
     );
 }

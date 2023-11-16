@@ -10,6 +10,7 @@ import Register from "./components/User/Register";
 import CreateProduct from "./components/Products/create/CreateProduct";
 import Products from "./components/Products/Products";
 import Details from "./components/Products/details/Details";
+import EditProduct from "./components/Products/edit/EditProduct";
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/create" element={<CreateProduct/>} />
+        <Route path="/edit" element={<EditProduct/>} />
         <Route path="/products" element={<Products/>} />
         <Route path="/products/details" element={<Details/>} />
 
