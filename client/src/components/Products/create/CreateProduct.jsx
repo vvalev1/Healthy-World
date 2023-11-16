@@ -48,6 +48,13 @@ export default function CreateProduct() {
                                 <input type="text" id="country" name="country" placeholder="country" autoComplete="true" />
                             </div>
                             <div className={styles["md-2"]}>
+                                <label htmlFor="kindProduct" className="form-label">Kind product:</label>
+                                <select name="kindProduct">
+                                    <option value="A">Fruit</option>
+                                    <option value="B">Vegetable</option>
+                                </select>
+                            </div>
+                            <div className={styles["md-2"]}>
                                 <label htmlFor="quantity" className="form-label">Quantity in order:</label>
                                 <input type="number" id="quantity" name="quantity" placeholder="quantity" autoComplete="true" />
                             </div>
