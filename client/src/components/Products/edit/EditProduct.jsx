@@ -28,7 +28,7 @@ export default function EditProduct() {
                             </div>
                             <div className={styles["md-2"]}>
                                 <label htmlFor="kindProduct" className="form-label">Kind product:</label>
-                                <select name="kindProduct">
+                                <select name="kindProduct" id="kindProduct">
                                     <option value="A">Fruit</option>
                                     <option value="B">Vegetable</option>
                                 </select>

@@ -57,3 +57,15 @@ div.md-2 {
     color: black;
     box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
 }
+
+#edit-page select {
+    padding-left: 20px;
+    height: 42px;
+    margin-bottom: 20px;
+    font-size: 17px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+    display: block;
+    width: 70%;
+    background-color: #ecf0f3;
+}
