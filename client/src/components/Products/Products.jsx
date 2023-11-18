@@ -1,6 +1,23 @@
+import { useEffect, useState } from "react";
 import Header from "../Header";
 import { Link } from "react-router-dom";
+import * as productService from "../../services/productService";
 export default function Products() {
+    const [products, setProduct] = useState([]);
+    
+    // TODO: да се направят 2 state - fruits, vegetables ??Ако имаме всички продукти може би не ни трябва тези states??
+    // да се направят компоненти за listItem-и
+    // когато се цъкне бутон fruits да се извеждат само fruits
+    // да се добави още 1 бутон AllProdutcs, където да се изведат всички продукти
+
+    useEffect(() => {
+        productService.getAll()
+        .then(results => setProduct(results))
+        .catch((err)=>console.log(err));
+
+    }, []);
+
+
     return (
         <>
             <Header pageName="Products" />
