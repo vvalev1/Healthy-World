@@ -12,6 +12,7 @@ import CreateProduct from "./components/Products/create/CreateProduct";
 import Products from "./components/Products/Products";
 import Details from "./components/Products/details/Details";
 import EditProduct from "./components/Products/edit/EditProduct";
+import AuthContext from "./components/contexts/authContext";
 
 
 
@@ -25,12 +26,14 @@ function App() {
 
   return (
     <>
+      <AuthContext.Provider value={loginSubmitHandler}>
+
         <NavigationBarComponent />
 
         <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login loginSubmitHandler />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/create" element={<CreateProduct />} />
           <Route path="/edit" element={<EditProduct />} />
@@ -42,6 +45,7 @@ function App() {
         </Routes>
 
         <Footer />
+      </AuthContext.Provider>
     </>
   )
 }
