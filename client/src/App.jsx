@@ -1,5 +1,6 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from "react-router-dom";
+import {useState } from "react";
 import HomeComponent from "./components/Home";
 import Footer from "./components/Footer";
 import NavigationBarComponent from "./components/NavigationBar";
@@ -16,24 +17,31 @@ import EditProduct from "./components/Products/edit/EditProduct";
 
 function App() {
 
+  const[auth, setAuth] = useState({});
+
+  const loginSubmitHandler = (values) => {
+
+  }
+
   return (
     <>
-      <NavigationBarComponent/>
-     
-      <Routes>
-        <Route path="/" element={<HomeComponent/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/create" element={<CreateProduct/>} />
-        <Route path="/edit" element={<EditProduct/>} />
-        <Route path="/products" element={<Products/>} />
-        <Route path="/products/details" element={<Details/>} />
+        <NavigationBarComponent />
 
-        <Route path="*" element={<NotFound/>} />
-      </Routes>
-      
-      <Footer/>
+        <Routes>
+          <Route path="/" element={<HomeComponent />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login loginSubmitHandler />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/create" element={<CreateProduct />} />
+          <Route path="/edit" element={<EditProduct />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/vegetables" element={<Products />} />
+          <Route path="/products/details" element={<Details />} />
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+
+        <Footer />
     </>
   )
 }

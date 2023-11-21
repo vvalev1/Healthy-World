@@ -1,6 +1,19 @@
+import useForm from '../hooks/useForm';
+
 import styles from './Login.module.css';
 import Header from "../Header";
-export default function Login() {
+
+const LoginFormKeys = {
+    Email: "email",
+    Password: "password"
+}
+
+export default function Login( loginSubmitHandler ) {
+    const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
+        [LoginFormKeys.Email]: "",
+        [LoginFormKeys.Password]: ""
+    });
+
     return (
         <>
             <Header 
@@ -8,15 +21,29 @@ export default function Login() {
             />
             <div className="container-fluid bg-light py-4">
                 <div className="container">
-                    <form id={styles["login-page"]}>
+                    <form id={styles["login-page"]} onSubmit={onSubmit}>
                         <div className="g-5 align-items-center">
                             <div className={styles["md-2"]}>
                                 <label htmlFor="email">Email:</label>
-                                <input type="email" id="email" aria-describedby="emailHelp" placeholder="Enter email" autoComplete="true"/>
+                                <input 
+                                    type="email" 
+                                    id="email"
+                                    name={LoginFormKeys.Email}  
+                                    placeholder="Enter email" 
+                                    onChange={onChange}
+                                    value={values[LoginFormKeys.Email]}
+                                />
                             </div>
                             <div className={styles["md-2"]}>
                                 <label htmlFor="password">Password:</label>
-                                <input type="password" id="password" placeholder="Password" autoComplete="true"/>
+                                <input 
+                                    type="password" 
+                                    id="password"
+                                    name={LoginFormKeys.Password} 
+                                    placeholder="Password" 
+                                    onChange={onChange}
+                                    value={values[LoginFormKeys.Password]}
+                                />
                             </div>
                         
                         </div>
