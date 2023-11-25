@@ -23,7 +23,7 @@ export function AuthProvider({
       result = await authService.login(values.email, values.password);
       const token = result.accessToken;
       localStorage.setItem("auth", token);
-      setAuth(token);
+      setAuth(result);
       navigate(Path.Home);
     } catch (e) {
       errorMessage = e.message;
@@ -34,7 +34,9 @@ export function AuthProvider({
 
   const values = {
     loginSubmitHandler,
-    username: auth
+    username: auth.username,
+    email: auth.email,
+    isAuthenticated: localStorage.getItem("auth"),
   };
 
   return (
