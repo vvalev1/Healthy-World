@@ -1,14 +1,17 @@
-import { Children, createContext } from "react";
+import { createContext } from "react";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 import * as authService from "../../services/authService";
+import Path from "../../paths/paths"
 
 
-const AuthContext = createContext();
+ const AuthContext = createContext();
 
-export default function AuthProvider({
+export function AuthProvider({
     children,
 }) {
+  const navigate = Navigate;
   const [auth, setAuth] = useState({});
 
   let errorMessage = "";
@@ -21,6 +24,7 @@ export default function AuthProvider({
       const token = result.accessToken;
       localStorage.setItem("auth", token);
       setAuth(token);
+      navigate(Path.Home);
     } catch (e) {
       errorMessage = e.message;
       console.log(e.message);
@@ -38,3 +42,5 @@ export default function AuthProvider({
     </AuthContext.Provider>
   );
 }
+
+export default AuthContext;

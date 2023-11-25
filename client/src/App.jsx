@@ -2,7 +2,8 @@
 import { Routes, Route, useParams } from "react-router-dom";
 
 
-import AuthProvider from "./components/contexts/AuthContext";
+import { AuthProvider } from "./components/contexts/AuthContext";
+import Path from "./paths/paths"
 
 import HomeComponent from "./components/Home";
 import Footer from "./components/Footer";
@@ -20,13 +21,12 @@ import Logout from "./components/Logout";
 
 
 function App() {
-
   return (
     <AuthProvider>
         <NavigationBarComponent />
-
+        
         <Routes>
-          <Route path="/" element={<HomeComponent />} />
+          <Route path={Path.Home} element={<HomeComponent />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
