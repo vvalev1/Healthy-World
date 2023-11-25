@@ -1,6 +1,9 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route } from "react-router-dom";
-import {useState } from "react";
+import { Routes, Route, useParams } from "react-router-dom";
+
+
+import AuthProvider from "./components/contexts/AuthContext";
+
 import HomeComponent from "./components/Home";
 import Footer from "./components/Footer";
 import NavigationBarComponent from "./components/NavigationBar";
@@ -12,22 +15,14 @@ import CreateProduct from "./components/Products/create/CreateProduct";
 import Products from "./components/Products/Products";
 import Details from "./components/Products/details/Details";
 import EditProduct from "./components/Products/edit/EditProduct";
-import AuthContext from "./components/contexts/authContext";
+import Logout from "./components/Logout";
 
 
 
 function App() {
 
-  const[auth, setAuth] = useState({});
-
-  const loginSubmitHandler = (values) => {
-
-  }
-
   return (
-    <>
-      <AuthContext.Provider value={loginSubmitHandler}>
-
+    <AuthProvider>
         <NavigationBarComponent />
 
         <Routes>
@@ -35,6 +30,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/create" element={<CreateProduct />} />
           <Route path="/edit" element={<EditProduct />} />
           <Route path="/products" element={<Products />} />
@@ -45,8 +41,7 @@ function App() {
         </Routes>
 
         <Footer />
-      </AuthContext.Provider>
-    </>
+    </AuthProvider>
   )
 }
 
