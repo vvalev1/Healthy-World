@@ -27,15 +27,15 @@ function App() {
         
         <Routes>
           <Route path={Path.Home} element={<HomeComponent />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/create" element={<CreateProduct />} />
-          <Route path="/edit" element={<EditProduct />} />
-          <Route path="/products" element={<Products />} />
+          <Route path={Path.About} element={<About />} />
+          <Route path={Path.Login} element={<Login />} />
+          <Route path={Path.Register} element={<Register />} />
+          <Route path={Path.Logout} element={<Logout />} />
+          <Route path={Path.CreateProduct} element={<CreateProduct />} />
+          <Route path={Path.EditProduct} element={<EditProduct />} />
+          <Route path={Path.Products} element={<Products />} />
           <Route path="/products/vegetables" element={<Products />} />
-          <Route path="/products/details" element={<Details />} />
+          <Route path={Path.ProductDetails} element={<Details />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import Path from "../paths/paths"
+
 
 export default function NavigationBarComponent() {
     return(
@@ -20,7 +22,7 @@ export default function NavigationBarComponent() {
             {/* </div> */}
     
             <nav className="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-                <Link to="/" className="navbar-brand ms-4 ms-lg-0">
+                <Link to={Path.Home} className="navbar-brand ms-4 ms-lg-0">
                     <h1 className="fw-bold text-primary m-0">H<span className="text-secondary">ea</span>lthy W<span className="text-secondary">or</span>ld</h1>
                 </Link>
                 
@@ -29,12 +31,13 @@ export default function NavigationBarComponent() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto p-4 p-lg-0">
-                        <Link to="/" className="nav-item nav-link active">Home</Link>
-                        <Link to="/about" className="nav-item nav-link">About Us</Link>
-                        <Link to="/products" className="nav-item nav-link">Products</Link>
-                        <Link to="/create" className="nav-item nav-link">Add Product</Link>
-                        <Link to="/login" className="nav-item nav-link">Login</Link>
-                        <Link to="/register" className="nav-item nav-link">Register</Link>
+                        <Link to={Path.Home} className="nav-item nav-link active">Home</Link>
+                        <Link to={Path.About} className="nav-item nav-link">About Us</Link>
+                        <Link to={Path.Products} className="nav-item nav-link">Products</Link>
+                        <Link to={Path.CreateProduct} className="nav-item nav-link">Add Product</Link>
+                        <Link to={Path.Login} className="nav-item nav-link">Login</Link>
+                        <Link to={Path.Register} className="nav-item nav-link">Register</Link>
+                        <Link to={Path.Logout} className="nav-item nav-link">Logout</Link>
                     </div>
                     <div className="d-none d-lg-flex ms-2">
                         <a className="btn-sm-square bg-white rounded-circle ms-3" href="">
