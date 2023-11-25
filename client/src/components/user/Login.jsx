@@ -5,12 +5,14 @@ import styles from './Login.module.css';
 import Header from "../Header";
 import AuthContext from '../contexts/AuthContext';
 
+
 const LoginFormKeys = {
     Email: "email",
     Password: "password"
 }
 
 export default function Login() {
+  
     const { loginSubmitHandler } = useContext(AuthContext);
 
     const payload = {
@@ -19,6 +21,7 @@ export default function Login() {
     }
 
     const {values, onChange, onSubmit} = useForm(loginSubmitHandler, payload);
+
 
     return (
         <>

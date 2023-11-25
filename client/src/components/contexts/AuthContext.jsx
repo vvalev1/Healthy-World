@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import * as authService from "../../services/authService";
 import Path from "../../paths/paths"
@@ -11,7 +11,7 @@ import Path from "../../paths/paths"
 export function AuthProvider({
     children,
 }) {
-  const navigate = Navigate;
+  const navigate = useNavigate();
   const [auth, setAuth] = useState({});
 
   let errorMessage = "";
@@ -27,8 +27,9 @@ export function AuthProvider({
       navigate(Path.Home);
     } catch (e) {
       errorMessage = e.message;
-      console.log(e.message);
+      // console.log(e.message);
     }
+    
   }
 
   const values = {
