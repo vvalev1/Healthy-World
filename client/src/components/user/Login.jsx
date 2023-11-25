@@ -3,20 +3,22 @@ import useForm from '../hooks/useForm';
 import styles from './Login.module.css';
 import Header from "../Header";
 import { useContext } from 'react';
-import AuthContext from '../contexts/authContext';
+import AuthContext from '../contexts/AuthContext';
 
 const LoginFormKeys = {
     Email: "email",
     Password: "password"
 }
 
-export default function Login() {
+export default function Login({errorMsg}) {
     const { loginSubmitHandler } = useContext(AuthContext);
 
-    const {values, onChange, onSubmit} = useForm(loginSubmitHandler, {
+    const payload = {
         [LoginFormKeys.Email]: "",
         [LoginFormKeys.Password]: ""
-    });
+    }
+
+    const {values, onChange, onSubmit} = useForm(loginSubmitHandler, payload);
 
     return (
         <>
@@ -25,6 +27,7 @@ export default function Login() {
             />
             <div className="container-fluid bg-light py-4">
                 <div className="container">
+                    <p>{errorMsg}</p>
                     <form id={styles["login-page"]} onSubmit={onSubmit}>
                         <div className="g-5 align-items-center">
                             <div className={styles["md-2"]}>
