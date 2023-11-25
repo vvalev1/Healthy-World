@@ -19,6 +19,6 @@ export const getAll = async () => {
     const response = await fetch(`${baseUrl}/products`);
 
     const result = await response.json();
-    console.log(result)
+ 
     return result;
 };
