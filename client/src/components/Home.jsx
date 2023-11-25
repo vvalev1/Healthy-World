@@ -20,7 +20,7 @@ export default function HomeComponent() {
                         </div>
                     </div> */}
                     <div className="carousel-item active">
-                        <img className="w-100" src="public/img/carousel-2.jpg" alt="Image"/>
+                        <img className="w-100" src="/img/carousel-2.jpg" alt="Image"/>
                         <div className="carousel-caption">
                             <div className="container">
                                 <div className="row justify-content-start">
