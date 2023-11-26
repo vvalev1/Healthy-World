@@ -2,12 +2,6 @@ const baseUrl = "http://localhost:3030/users";
 
 const token = localStorage.getItem("auth");
 
-const authHeaders = {
-    
-     "content-type": "application/json",
-     "X-Authorization": token
-}
-
 export const login = async (email, password) => {
 
     const response = await fetch(`${baseUrl}/login`, {
@@ -51,6 +45,9 @@ export const register = async (email, password) => {
 export const logout = async () => {
     return await fetch(`${baseUrl}/logout`, {
         method: "GET",
-        headers: authHeaders
+        headers: {
+            "content-type": "application/json",
+            "X-Authorization": token
+       }
     });
 };
