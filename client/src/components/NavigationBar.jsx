@@ -6,8 +6,7 @@ import AuthContext from './contexts/AuthContext';
 
 
 export default function NavigationBarComponent() {
-    const { username, isAuthenticated } = useContext(AuthContext);
-    console.log(username)
+    const { username, isAuthenticated} = useContext(AuthContext);
 
     return(
         <div className="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">    
@@ -28,7 +27,7 @@ export default function NavigationBarComponent() {
                             <div id="user" style={{display: 'inline-flex'}}>
                                 <Link to={Path.CreateProduct} className="nav-item nav-link">Add Product</Link>
                                 <Link to={Path.Logout} className="nav-item nav-link">Logout</Link>
-                                <p id="userName" style={{"margin-top": "25px"}}>Welcome, {username}</p>
+                                <p id="userName" style={{marginTop: "25px"}}>Welcome, {username}</p>
                             </div>)
                         }       
 

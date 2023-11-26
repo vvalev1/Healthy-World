@@ -13,7 +13,7 @@ const LoginFormKeys = {
 
 export default function Login() {
   
-    const { loginSubmitHandler } = useContext(AuthContext);
+    const { loginSubmitHandler, errorMsg } = useContext(AuthContext);
 
     const payload = {
         [LoginFormKeys.Email]: "",
@@ -32,6 +32,7 @@ export default function Login() {
                 <div className="container">
                     <form id={styles["login-page"]} onSubmit={onSubmit}>
                         <div className="g-5 align-items-center">
+                            <p id={styles["errorMsg"]}>{errorMsg}</p>
                             <div className={styles["md-2"]}>
                                 <label htmlFor="email">Email:</label>
                                 <input 

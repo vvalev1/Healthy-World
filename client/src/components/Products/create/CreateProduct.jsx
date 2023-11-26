@@ -50,8 +50,8 @@ export default function CreateProduct() {
                             <div className={styles["md-2"]}>
                                 <label htmlFor="kindProduct" className="form-label">Kind product:</label>
                                 <select name="kindProduct">
-                                    <option value="A">Fruit</option>
-                                    <option value="B">Vegetable</option>
+                                    <option value="fruit">Fruit</option>
+                                    <option value="vegetable">Vegetable</option>
                                 </select>
                             </div>
                             <div className={styles["md-2"]}>

@@ -39,3 +39,7 @@
 div.md-2 {
     text-align: -webkit-center;
 }
+
+#errorMsg {
+    color: red;
+}
