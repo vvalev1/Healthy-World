@@ -74,9 +74,16 @@ export function AuthProvider({
 
   }
 
+  const logoutHandler = () => {
+    setAuth({});
+    navigate(Path.Home);
+    localStorage.removeItem("auth");
+  }
+
   const values = {
     loginSubmitHandler,
     registerSubmitHandler,
+    logoutHandler,
     username: auth.username || auth.email,
     email: auth.email,
     isAuthenticated: localStorage.getItem("auth"),
