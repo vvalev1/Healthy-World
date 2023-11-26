@@ -1,12 +1,17 @@
-const baseUrl = "http://localhost:3030/jsonstore";
+const baseUrl = "http://localhost:3030/data";
+
+const token = localStorage.getItem("auth");
+
+const authHeaders = {
+    "content-type": "application/json",
+    "X-Authorization": token,
+};
 
 export const create = async (productData) => {
 
     const response = await fetch(`${baseUrl}/products`, {
         method: "POST",
-        headers: {
-            "content-type": "application/json"
-        },
+        headers: authHeaders,
         body: JSON.stringify(productData)
     })
 
