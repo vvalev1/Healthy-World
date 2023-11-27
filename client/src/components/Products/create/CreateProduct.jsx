@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function CreateProduct() {
     const navigate = useNavigate();
-    const [errorMsg, setErrorMsg] = useState({});
+    // const [errorMsg, setErrorMsg] = useState({});
     
    
     const CreateProductKeys = {
@@ -32,15 +32,13 @@ export default function CreateProduct() {
 
     const {values, onChange, onSubmit} = useForm(createProductSubmitHandler,initialValues);
 
-    async function createProductSubmitHandler(e) {
+    async function createProductSubmitHandler(values) {
 
         // TODO: ERROR HANDLING
         
         // if(values[CreateProductKeys.ProductName] === "") {
         //     setErrorMsg((errorMsg)=> ...errorMsg, values[CreateProductKeys.ProductName]);
         // }
-            
-        // const productData = Object.fromEntries(new FormData(e.currentTarget));
             
         try {
             await productService.create(values);
@@ -114,7 +112,13 @@ export default function CreateProduct() {
                             </div>
                             <div className={styles["md-2"]}>
                                 <label htmlFor="kindProduct" className="form-label">Kind product:</label>
-                                <select id="kindProduct" name={[CreateProductKeys.KindProduct]} onChange={onChange} value={values[[CreateProductKeys.KindProduct]]}>
+                                <select 
+                                    id="kindProduct"
+                                    name={[CreateProductKeys.KindProduct]}
+                                    onChange={onChange}
+                                    value={values[[CreateProductKeys.KindProduct]]}
+                                >
+                                    <option value="none"></option>
                                     <option value="fruit">Fruit</option>
                                     <option value="vegetable">Vegetable</option>
                                 </select>
@@ -140,6 +144,7 @@ export default function CreateProduct() {
                                     name={[CreateProductKeys.Description]}
                                     onChange={onChange}
                                     value={values[[CreateProductKeys.Description]]}
+                                    autoComplete="true"
 
                                 ></textarea>
                             </div>
