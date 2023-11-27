@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3030/data";
+const baseUrl = "http://localhost:3030/data/products";
 
 const token = localStorage.getItem("auth");
 
@@ -9,7 +9,7 @@ const authHeaders = {
 
 export const create = async (productData) => {
 
-    const response = await fetch(`${baseUrl}/products`, {
+    const response = await fetch(`${baseUrl}`, {
         method: "POST",
         headers: authHeaders,
         body: JSON.stringify(productData)
@@ -21,7 +21,20 @@ export const create = async (productData) => {
 };
 
 export const getAll = async () => {
-    const response = await fetch(`${baseUrl}/products`);
+    const response = await fetch(`${baseUrl}`);
+
+    const result = await response.json();
+ 
+    return result;
+};
+
+export const getAllByKind = async (productKind) => {
+    
+    const query = new URLSearchParams({
+        where: `kindProduct="${productKind}"`
+    });
+
+    const response = await fetch(`${baseUrl}?${query}`);
 
     const result = await response.json();
  
