@@ -1,22 +1,33 @@
 import { useEffect, useState } from "react";
 import Header from "../Header";
-import { Link } from "react-router-dom";
 import * as productService from "../../services/productService";
+import ProductItem from "./productItem/ProductItem";
 export default function Products() {
-    const [products, setProduct] = useState([]);
-    
-    // TODO: да се направят 2 state - fruits, vegetables ??Ако имаме всички продукти може би не ни трябва тези states??
+    const [products, setProducts] = useState([]);
+    const [productKind, setProductKind] = useState("allProducts");
+
+    const productTypeHandler = (e) => {
+        const currentButton = e.target;
+        const pKind = currentButton.name;
+
+        setProductKind(pKind);
+    }
+
     // да се направят компоненти за listItem-и
-    // когато се цъкне бутон fruits да се извеждат само fruits
-    // да се добави още 1 бутон AllProdutcs, където да се изведат всички продукти
 
     useEffect(() => {
-        productService.getAll()
-        .then(results => setProduct(results))
-        .catch((err)=>console.log(err));
+        if(productKind === "allProducts") {
+            productService.getAll()
+                .then(results => setProducts(Object.values(results)))
+                .catch((err)=>console.log(err));
+        } else {
+            productService.getAllByKind(productKind)
+                .then(results => setProducts(Object.values(results)))
+                .catch((err) => console.log(err));
+        }
 
-    }, []);
-
+    }, [productKind]);
+ 
 
     return (
         <>
@@ -24,197 +35,31 @@ export default function Products() {
             <div className="container-xxl py-5">
                 <div className="container">
                     <div className="row g-0 gx-5 align-items-end">
-                        <div className="col-lg-3 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+                        <div className="col-lg-4 text-start text-lg-start wow slideInRight" data-wow-delay="0.1s">
                             <ul className="nav nav-pills d-inline-flex justify-content-end mb-5">
                                 <li className="nav-item me-2">
-                                    <a className="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">Vegetable</a>
+                                    <button className="btn btn-outline-primary border-2 active" data-bs-toggle="pill" name="allProducts" onClick={productTypeHandler}>All Products</button>
                                 </li>
                                 <li className="nav-item me-2">
-                                    <a className="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-2">Fruits </a>
+                                    <button className="btn btn-outline-primary border-2" data-bs-toggle="pill" name="vegetable" onClick={productTypeHandler}>Vegetable</button>
+                                </li>
+                                <li className="nav-item me-2">
+                                    <button className="btn btn-outline-primary border-2" data-bs-toggle="pill" name="fruit" onClick={productTypeHandler}>Fruits</button>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="tab-content">
-                        <div id="tab-1" className="tab-pane fade show p-0 active">
-                            <div className="row g-4">
-                                <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-1.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-2.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-3.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-4.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-5.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-6.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-7.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-8.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                                    <a className="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
-                                </div>
-                            </div>
+                        <div className="row fade show p-0">
+                            { products.map(productItem => 
+                                    
+                                   (<ProductItem key={productItem._id} {...productItem}/>
+                            ))
+                            }
                         </div>
-                        <div id="tab-2" className="tab-pane fade show p-0">
-                            <div className="row g-4">
-                                <div className="col-xl-3 col-lg-4 col-md-6">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-1.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-2.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-3.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-4.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-5.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-3 col-lg-4 col-md-6">
-                                    <div className="product-item">
-                                        <div className="position-relative bg-light overflow-hidden">
-                                            <img className="img-fluid w-100" src="/public/img/product-6.jpg" alt=""/>
-                                                <div className="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                        </div>
-                                        <div className="text-center p-4">
-                                            <Link to="/products/details" className="d-block h5 mb-2">Fresh Tomato</Link>
-                                            <span className="text-primary me-1">$19.00</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {products.length === 0 && (
+                                <h3>No products yet</h3>
+                            )}
                     </div>
                 </div>
             </div>
