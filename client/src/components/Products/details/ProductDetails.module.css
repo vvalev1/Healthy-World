@@ -3,6 +3,7 @@ body{
 }
 .card {
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 .card {
     position: relative;
@@ -20,10 +21,17 @@ body{
     margin-bottom: 10px;
     color: #8898aa;
 }
-.table-product.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f3f8fa!important
+
+.list-unstyled li span {
+    font-weight: bold;
+    margin-right: 10px;
 }
-.table-product td{
-    border-top: 0px solid #dee2e6 !important;
-    color: #728299!important;
+
+.list-unstyled {
+    list-style-type: none;
+    text-align: left;
+}
+
+.img-responsive {
+    width: -webkit-fill-available;
 }

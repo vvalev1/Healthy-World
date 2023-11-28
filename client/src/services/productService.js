@@ -53,3 +53,21 @@ export const getAllByKind = async (productKind) => {
  
     return result;
 };
+
+
+export const getOne = async (productId) => {
+    
+    // const query = new URLSearchParams({
+    //     where: `kindProduct="${productKind}"`
+    // });
+
+    const response = await fetch(`${baseUrl}/${productId}`);
+
+    const result = await response.json();
+
+    if(!response.ok) {
+        throw result;
+    }
+ 
+    return result;
+};

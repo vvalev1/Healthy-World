@@ -18,11 +18,11 @@ export default function Products() {
     useEffect(() => {
         if(productKind === "allProducts") {
             productService.getAll()
-                .then(results => setProducts(Object.values(results)))
+                .then(results => setProducts(results))
                 .catch((err)=>console.log(err.message));
         } else {
             productService.getAllByKind(productKind)
-                .then(results => setProducts(Object.values(results)))
+                .then(results => setProducts(results))
                 .catch((err) => console.log(err));
         }
 
