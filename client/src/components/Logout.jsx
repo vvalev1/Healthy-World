@@ -14,9 +14,11 @@ export default function Logout() {
         authService.logout()
             .then(() => {
                 logoutHandler();
-            })
-            .catch(() => {
                 navigate(Path.Home);
+            })
+            .catch((err) => {
+                logoutHandler();
+                navigate(Path.Login);
             })
     }, []);
     
