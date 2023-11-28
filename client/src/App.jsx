@@ -14,7 +14,7 @@ import Login from "./components/User/Login";
 import Register from "./components/User/Register";
 import CreateProduct from "./components/Products/create/CreateProduct";
 import Products from "./components/Products/Products";
-import Details from "./components/Products/details/Details";
+import Details from "./components/Products/details/ProductDetails";
 import EditProduct from "./components/Products/edit/EditProduct";
 import Logout from "./components/Logout";
 
@@ -34,7 +34,6 @@ function App() {
           <Route path={Path.CreateProduct} element={<CreateProduct />} />
           <Route path={Path.EditProduct} element={<EditProduct />} />
           <Route path={Path.Products} element={<Products />} />
-          <Route path="/products/vegetables" element={<Products />} />
           <Route path={Path.ProductDetails} element={<Details />} />
 
           <Route path="*" element={<NotFound />} />
