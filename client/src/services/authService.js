@@ -17,6 +17,10 @@ export const login = async (email, password) => {
 
     const result = await response.json();
 
+    if(!response.ok) {
+        throw result;
+    }
+
 
     return result;
 };
