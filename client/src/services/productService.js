@@ -16,6 +16,11 @@ export const create = async (productData) => {
     })
 
     const result = await response.json();
+
+    if(!response.ok) {
+        throw result;
+    }
+
     return result;
 
 };
@@ -24,6 +29,10 @@ export const getAll = async () => {
     const response = await fetch(`${baseUrl}`);
 
     const result = await response.json();
+
+    if(!response.ok) {
+        throw result;
+    }
  
     return result;
 };
@@ -37,6 +46,10 @@ export const getAllByKind = async (productKind) => {
     const response = await fetch(`${baseUrl}?${query}`);
 
     const result = await response.json();
+
+    if(!response.ok) {
+        throw result;
+    }
  
     return result;
 };

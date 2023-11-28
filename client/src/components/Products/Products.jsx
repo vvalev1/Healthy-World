@@ -19,7 +19,7 @@ export default function Products() {
         if(productKind === "allProducts") {
             productService.getAll()
                 .then(results => setProducts(Object.values(results)))
-                .catch((err)=>console.log(err));
+                .catch((err)=>console.log(err.message));
         } else {
             productService.getAllByKind(productKind)
                 .then(results => setProducts(Object.values(results)))
@@ -51,7 +51,7 @@ export default function Products() {
                     </div>
                     <div className="tab-content">
                         <div className="row fade show p-0">
-                            { products.map(productItem => 
+                            { products.length > 0 && products.map(productItem => 
                                     
                                    (<ProductItem key={productItem._id} {...productItem}/>
                             ))
