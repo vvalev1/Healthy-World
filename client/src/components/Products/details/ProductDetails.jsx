@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import * as productService from "../../../services/productService"
 import Path from "../../../paths/paths";
@@ -8,7 +8,7 @@ import Header from "../../Header";
 import styles from "./ProductDetails.module.css"
 
 export default function Details() {
-
+    const navigate = useNavigate();
     const [product, setProduct] = useState({});
     const { productId } = useParams();
 
@@ -18,6 +18,16 @@ export default function Details() {
             .then((result) => setProduct(result))
             .catch((err) => console.log(err.message));
     }, [productId]);
+
+    const deleteProductHandler = async () => {
+        try {
+            await productService.remove(productId);
+            navigate(Path.Products);
+            
+        } catch (error) {
+            console.log(error);            
+        }
+    }
 
     return (
         <>
@@ -37,7 +47,7 @@ export default function Details() {
                                 <button className="btn btn-primary">Buy Now</button>
                                 <div className="mt-4">
                                     <Link to={Path.EditProduct} className="btn btn-secondary mx-2 px-4 rounded-pill">Edit</Link>
-                                    <button className="btn btn-danger rounded-pill px-4">Delete</button>
+                                    <button className="btn btn-danger rounded-pill px-4" onClick={deleteProductHandler}>Delete</button>
                                 </div>
                                 <h5 className="box-title mt-5">General information: </h5>
                                 <ul className={styles["list-unstyled"]}>
