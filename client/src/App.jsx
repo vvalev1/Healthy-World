@@ -31,10 +31,15 @@ function App() {
           <Route path={Path.Login} element={<Login />} />
           <Route path={Path.Register} element={<Register />} />
           <Route path={Path.Logout} element={<Logout />} />
-          <Route path={Path.CreateProduct} element={<CreateProduct />} />
-          <Route path={Path.EditProduct} element={<EditProduct />} />
           <Route path={Path.Products} element={<Products />} />
           <Route path={Path.ProductDetails} element={<Details />} />
+
+        {/* Route guards */}
+          <Route element={<Login />}>
+              <Route path={Path.CreateProduct} element={<CreateProduct />} />
+              <Route path={Path.EditProduct} element={<EditProduct />} />
+
+          </Route>
 
           <Route path="*" element={<NotFound />} />
         </Routes>
