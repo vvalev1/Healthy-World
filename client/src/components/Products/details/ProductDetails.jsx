@@ -13,7 +13,7 @@ export default function Details() {
     const navigate = useNavigate();
     const [product, setProduct] = useState({});
     const { productId } = useParams();
-    const { isAuthenticated } = useContext(AuthContext);
+    const { isAuthenticated, userId } = useContext(AuthContext);
 
 
     useEffect(() => {
@@ -57,7 +57,7 @@ export default function Details() {
                                 <h4 className="mt-5">Price: <span>${product.price}</span></h4>
                                 <button className="btn btn-primary" onClick={buyProductHandler}>Buy Now</button>
                                 <div className="mt-4">
-                                    {isAuthenticated && (
+                                    {isAuthenticated && userId === product._ownerId && (
                                         <>
                                             <Link to={pathToUrl(Path.EditProduct, { productId })} className="btn btn-secondary mx-2 px-4 rounded-pill">Edit</Link>
                                             <button className="btn btn-danger rounded-pill px-4" onClick={deleteProductHandler}>Delete</button>
