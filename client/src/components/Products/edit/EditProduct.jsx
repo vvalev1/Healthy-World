@@ -77,6 +77,7 @@ export default function EditProduct() {
                                     placeholder="Item name"
                                     onChange={onChange}
                                     value={values[CreateProductKeys.ProductName]}
+                                    autocomplete="true"
                                 />
                             </div>
                             <div className={styles["md-2"]}>
@@ -88,6 +89,7 @@ export default function EditProduct() {
                                     placeholder="price"
                                     onChange={onChange}
                                     value={values[CreateProductKeys.Price]}
+                                    autocomplete="true"
                                 />
                             </div>
                             <div className={styles["md-2"]}>
@@ -110,6 +112,7 @@ export default function EditProduct() {
                                     placeholder="country"
                                     onChange={onChange}
                                     value={values[CreateProductKeys.Country]}
+                                    autocomplete="true"
                                 />
                             </div>
                             <div className={styles["md-2"]}>

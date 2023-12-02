@@ -18,6 +18,7 @@ import Details from "./components/Products/details/ProductDetails";
 import EditProduct from "./components/Products/edit/EditProduct";
 import Logout from "./components/Logout";
 import AuthGuard from "./components/guards/AuthGuard";
+import OrderForm from "./components/OrderForm/OrderForm";
 
 
 
@@ -39,6 +40,7 @@ function App() {
           <Route element={<AuthGuard />}>
               <Route path={Path.CreateProduct} element={<CreateProduct />} />
               <Route path={Path.EditProduct} element={<EditProduct />} />
+              <Route path={Path.OrderProduct} element={<OrderForm />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

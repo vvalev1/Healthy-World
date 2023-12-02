@@ -40,7 +40,8 @@ export default function Register() {
                                     name={RegisterKeys.Email} 
                                     placeholder="Enter email"
                                     value={values[RegisterKeys.Email]}
-                                    onChange={onChange}  
+                                    onChange={onChange}
+                                    autocomplete="true"  
                                 />
                             </div>
                             <div className={styles["md-2"]}>

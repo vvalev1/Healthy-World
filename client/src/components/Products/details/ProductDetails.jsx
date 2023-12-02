@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import * as productService from "../../../services/productService"
+import * as buyService from "../../../services/orderService"
 import Path from "../../../paths/paths";
 import AuthContext from "../../contexts/AuthContext";
 import { pathToUrl } from "../../../utils/pathToUrl";
@@ -14,6 +15,9 @@ export default function Details() {
     const [product, setProduct] = useState({});
     const { productId } = useParams();
     const { isAuthenticated, userId } = useContext(AuthContext);
+    const [quantity, setQuantity] = useState(0);
+    const [successfulBought, setSuccessfulBought] = useState("");
+
 
 
     useEffect(() => {
@@ -26,18 +30,44 @@ export default function Details() {
         try {
             await productService.remove(productId);
             navigate(Path.Products);
-            
+
         } catch (error) {
-            console.log(error);            
+            console.log(error);
         }
     }
 
+    const setQuantityOfProductsToBuy = (e) => {
+
+        const buttonName = e.currentTarget.name;
+
+        if (buttonName === "increase") {
+            setQuantity(() => {
+                return quantity + 1;
+            });
+
+        } else if (buttonName === "decrease") {
+
+            if(quantity <= 0) {
+                return;
+            }
+
+            setQuantity(() => {
+                return quantity - 1;
+            });
+        }
+
+    };
+
     const buyProductHandler = () => {
-        if(!isAuthenticated) {
+
+        if (!isAuthenticated) {
             navigate(Path.Login);
         }
 
-        // TODO: buy a product 
+        buyService.create(productId, userId)
+            .then(() => {setSuccessfulBought("Successfully bought the product!")})
+            .catch((err) => console.log(err))
+
     }
 
     return (
@@ -50,12 +80,34 @@ export default function Details() {
                     <div className="card-body">
                         <div className="row">
                             <div className="col-lg-5  col-md-6 col-sm-7">
-                                <div className="white-box text-center"><img src={product.imageUrl} className={styles["img-responsive"]}/></div>
+                                <div className="white-box text-center"><img src={product.imageUrl} className={styles["img-responsive"]} /></div>
                             </div>
                             <div className="col-lg-7 col-md-9 col-sm-4">
                                 <h2 className=" mt-5">{product.name}</h2>
                                 <h4 className="mt-5">Price: <span>${product.price}</span></h4>
-                                <button className="btn btn-primary" onClick={buyProductHandler}>Buy Now</button>
+
+                                {userId !== product._ownerId && (
+                                    <div style={{display: "flex"}}>
+                                        <button 
+                                            className="btn btn-primary" 
+                                             onClick={setQuantityOfProductsToBuy}
+                                             name="decrease"
+                                        >-</button>
+                                        <input
+                                            type="number"
+                                            id="quantity"
+                                            name="quantity"
+                                            placeholder="quantity"
+                                            value={quantity}
+                                            style={{width: "15%"}}
+                                            readOnly
+                                        />
+                                        <button className="btn btn-primary" name="increase" onClick={setQuantityOfProductsToBuy}>+</button>
+
+                                        <Link to={pathToUrl(Path.OrderProduct, { productId })} className="btn btn-primary mx-5" onClick={buyProductHandler}>Buy Now</Link>
+                                    </div>
+                                )}
+
                                 <div className="mt-4">
                                     {isAuthenticated && userId === product._ownerId && (
                                         <>

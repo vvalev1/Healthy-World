@@ -43,10 +43,6 @@ export default function NavigationBarComponent() {
                         <a className="btn-sm-square bg-white rounded-circle ms-3" href="">
                             <small className="fa fa-search text-body"></small>
                         </a>
-                        
-                        <a className="btn-sm-square bg-white rounded-circle ms-3" href="">
-                            <small className="fa fa-shopping-bag text-body"></small>
-                        </a>
                     </div>
                 </div>
             </nav>
