@@ -57,8 +57,10 @@ export default function Details() {
                                 <button className="btn btn-primary" onClick={buyProductHandler}>Buy Now</button>
                                 <div className="mt-4">
                                     {isAuthenticated && (
-                                        <Link to={Path.EditProduct} className="btn btn-secondary mx-2 px-4 rounded-pill">Edit</Link>,
-                                        <button className="btn btn-danger rounded-pill px-4" onClick={deleteProductHandler}>Delete</button>
+                                        <>
+                                            <Link to={Path.EditProduct} className="btn btn-secondary mx-2 px-4 rounded-pill">Edit</Link>
+                                            <button className="btn btn-danger rounded-pill px-4" onClick={deleteProductHandler}>Delete</button>
+                                        </>
                                     )}
                                 </div>
                                 <h5 className="box-title mt-5">General information: </h5>
