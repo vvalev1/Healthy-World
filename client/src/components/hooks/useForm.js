@@ -16,9 +16,14 @@ export default function useForm(submitHandler, initialValues) {
         submitHandler(values);
     }
 
+    const fillValuesWithLoadedData = (data) => {
+        setValues(data);
+    }
+
     return {
         values,
         onChange,
-        onSubmit
+        onSubmit,
+        fillValuesWithLoadedData
     }
 }
