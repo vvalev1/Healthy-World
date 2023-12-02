@@ -4,7 +4,7 @@ const Path = {
     Register: "/register",
     Logout: "/logout",
     CreateProduct: "/products/create",
-    EditProduct: "/products/edit",
+    EditProduct: "/products/edit/:productId",
     ProductDetails: "/products/:productId",
     About: "/about",
     Products: "/products"

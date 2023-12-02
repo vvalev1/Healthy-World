@@ -4,6 +4,7 @@ import * as productService from "../../../services/productService";
 import { useNavigate } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { useState } from "react";
+import Path from "../../../paths/paths";
 
 export default function CreateProduct() {
     const navigate = useNavigate();
@@ -42,7 +43,7 @@ export default function CreateProduct() {
             
         try {
             await productService.create(values);
-            navigate("/products");
+            navigate(Path.Products);
         } catch (err) {
             // To implement Error notification
             console.log(err);

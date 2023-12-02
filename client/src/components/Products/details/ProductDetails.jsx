@@ -7,6 +7,7 @@ import AuthContext from "../../contexts/AuthContext";
 
 import Header from "../../Header";
 import styles from "./ProductDetails.module.css"
+import { pathToUrl } from "../../../utils/pathToUrl";
 
 export default function Details() {
     const navigate = useNavigate();
@@ -58,7 +59,7 @@ export default function Details() {
                                 <div className="mt-4">
                                     {isAuthenticated && (
                                         <>
-                                            <Link to={Path.EditProduct} className="btn btn-secondary mx-2 px-4 rounded-pill">Edit</Link>
+                                            <Link to={pathToUrl(Path.EditProduct, { productId })} className="btn btn-secondary mx-2 px-4 rounded-pill">Edit</Link>
                                             <button className="btn btn-danger rounded-pill px-4" onClick={deleteProductHandler}>Delete</button>
                                         </>
                                     )}
