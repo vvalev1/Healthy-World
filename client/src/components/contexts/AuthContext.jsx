@@ -91,6 +91,7 @@ export function AuthProvider({
     username: auth.username || auth.email,
     email: auth.email,
     isAuthenticated: localStorage.getItem("auth"),
+    userId: auth._id,
     errorMsg: errorMessage
 
   };
