@@ -4,10 +4,10 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import * as productService from "../../../services/productService"
 import Path from "../../../paths/paths";
 import AuthContext from "../../contexts/AuthContext";
+import { pathToUrl } from "../../../utils/pathToUrl";
 
 import Header from "../../Header";
 import styles from "./ProductDetails.module.css"
-import { pathToUrl } from "../../../utils/pathToUrl";
 
 export default function Details() {
     const navigate = useNavigate();
