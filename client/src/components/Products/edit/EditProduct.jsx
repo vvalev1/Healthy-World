@@ -1,14 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import * as productService from "../../../services/productService";
 import useForm from "../../hooks/useForm";
+import Path from "../../../paths/paths";
 
 import Header from "../../Header";
 import styles from "./EditProduct.module.css";
-import { useParams } from "react-router-dom";
 
 export default function EditProduct() {
     const { productId } = useParams();
+    const navigate = useNavigate();
 
     const CreateProductKeys = {
         ProductName: "name",
@@ -29,14 +31,18 @@ export default function EditProduct() {
         [CreateProductKeys.Quantity]: "",
         [CreateProductKeys.Description]: "",
     };
-
-    useEffect(() => {
-        productService.getOne()
-    });
-
-    const {values, onChange, onSubmit} = useForm(editProductSubmitHandler,initialValues);
     
-    async function editProductSubmitHandler(values) {
+    const {values, onChange, onSubmit, fillValuesWithLoadedData} = useForm(editProductSubmitHandler,initialValues);
+    
+    useEffect(() => {
+        productService.getOne(productId)
+        .then((result) => {fillValuesWithLoadedData(result)})
+        .catch(err => {console.log(err.message)});
+        
+    }, [productId]);
+
+    
+    async function editProductSubmitHandler() {
 
         // TODO: ERROR HANDLING
         
@@ -45,7 +51,7 @@ export default function EditProduct() {
         // }
             
         try {
-            await productService.create(values);
+            await productService.update(values, productId);
             navigate(Path.Products);
         } catch (err) {
             // To implement Error notification
@@ -114,8 +120,8 @@ export default function EditProduct() {
                                     onChange={onChange}
                                     value={values[CreateProductKeys.KindProduct]}
                                 >
-                                    <option value="A">Fruit</option>
-                                    <option value="B">Vegetable</option>
+                                    <option value="fruit">Fruit</option>
+                                    <option value="vegetable">Vegetable</option>
                                 </select>
                             </div>
                             <div className={styles["md-2"]}>

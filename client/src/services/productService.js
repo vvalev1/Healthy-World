@@ -21,6 +21,27 @@ export const create = async (productData) => {
 
 };
 
+export const update = async (productData, productId) => {
+
+    const response = await fetch(`${baseUrl}/${productId}`, {
+        method: "PUT",
+        headers: {
+            "content-type": "application/json",
+            "X-Authorization": localStorage.getItem("auth"),
+        },
+        body: JSON.stringify(productData)
+    })
+
+    const result = await response.json();
+
+    if(!response.ok) {
+        throw result;
+    }
+
+    return result;
+
+};
+
 export const getAll = async () => {
     const response = await fetch(`${baseUrl}`);
 
