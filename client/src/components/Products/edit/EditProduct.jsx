@@ -11,6 +11,8 @@ import styles from "./EditProduct.module.css";
 export default function EditProduct() {
     const { productId } = useParams();
     const navigate = useNavigate();
+    const [errorMsg, setErrorMsg] = useState("");
+
 
     const CreateProductKeys = {
         ProductName: "name",
@@ -44,11 +46,19 @@ export default function EditProduct() {
     
     async function editProductSubmitHandler() {
 
-        // TODO: ERROR HANDLING
-        
-        // if(values[CreateProductKeys.ProductName] === "") {
-        //     setErrorMsg((errorMsg)=> ...errorMsg, values[CreateProductKeys.ProductName]);
-        // }
+        if(values[CreateProductKeys.ProductName] === "") {
+            return setErrorMsg("Product name is required!");
+        } else if(values[CreateProductKeys.Price] === "") {
+            return setErrorMsg("Product price is required!");
+        } else if(values[CreateProductKeys.ImagerUrl] === "") {
+            return setErrorMsg("Product image is required!");
+        } else if(values[CreateProductKeys.Country] === "") {
+            return setErrorMsg("Country is required!");
+        } else if(values[CreateProductKeys.Quantity] === "") {
+            return setErrorMsg("Quantity is required!");
+        }
+
+        setErrorMsg("");
             
         try {
             await productService.update(values, productId);
@@ -68,6 +78,7 @@ export default function EditProduct() {
                 <div className="container bg-icon">
                     <form id={styles["edit-page"]} onSubmit={onSubmit}>
                         <div className="g-5">
+                            <p id={styles["errorMsg"]}>{errorMsg}</p>
                             <div className={styles["md-2"]}>
                                 <label htmlFor="itemName" className="form-label">Name:</label>
                                 <input 
@@ -77,7 +88,7 @@ export default function EditProduct() {
                                     placeholder="Item name"
                                     onChange={onChange}
                                     value={values[CreateProductKeys.ProductName]}
-                                    autocomplete="true"
+                                    autoComplete="true"
                                 />
                             </div>
                             <div className={styles["md-2"]}>
@@ -89,7 +100,7 @@ export default function EditProduct() {
                                     placeholder="price"
                                     onChange={onChange}
                                     value={values[CreateProductKeys.Price]}
-                                    autocomplete="true"
+                                    autoComplete="true"
                                 />
                             </div>
                             <div className={styles["md-2"]}>
@@ -112,7 +123,7 @@ export default function EditProduct() {
                                     placeholder="country"
                                     onChange={onChange}
                                     value={values[CreateProductKeys.Country]}
-                                    autocomplete="true"
+                                    autoComplete="true"
                                 />
                             </div>
                             <div className={styles["md-2"]}>

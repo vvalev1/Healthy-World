@@ -72,6 +72,11 @@ export const getAllByKind = async (productKind) => {
 };
 
 export const getAllByName = async (productName) => {
+
+    // if no name has entered
+    if(productName === "") {
+        return [];
+    }
     
     const response = await fetch(`${baseUrl}?where=name LIKE ${encodeURIComponent(`"${productName}"`)}`);
 
