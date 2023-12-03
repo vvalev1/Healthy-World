@@ -8,7 +8,7 @@ import Path from "../../../paths/paths";
 
 export default function CreateProduct() {
     const navigate = useNavigate();
-    // const [errorMsg, setErrorMsg] = useState({});
+    const [errorMsg, setErrorMsg] = useState("");
     
    
     const CreateProductKeys = {
@@ -35,11 +35,23 @@ export default function CreateProduct() {
 
     async function createProductSubmitHandler(values) {
 
-        // TODO: ERROR HANDLING
+
         
-        // if(values[CreateProductKeys.ProductName] === "") {
-        //     setErrorMsg((errorMsg)=> ...errorMsg, values[CreateProductKeys.ProductName]);
-        // }
+        if(values[CreateProductKeys.ProductName] === "") {
+            return setErrorMsg("Product name is required!");
+        } else if(values[CreateProductKeys.Price] === "") {
+            return setErrorMsg("Product price is required!");
+        } else if(values[CreateProductKeys.ImagerUrl] === "") {
+            return setErrorMsg("Product image is required!");
+        } else if(values[CreateProductKeys.Country] === "") {
+            return setErrorMsg("Country is required!");
+        } else if(values[CreateProductKeys.KindProduct] === "") {
+            return setErrorMsg("Kind product is required!");
+        } else if(values[CreateProductKeys.Quantity] === "") {
+            return setErrorMsg("Quantity is required!");
+        }
+
+        setErrorMsg("");
             
         try {
             await productService.create(values);
@@ -60,6 +72,7 @@ export default function CreateProduct() {
                 <div className="container bg-icon">
                     <form id={styles["create-page"]} onSubmit={onSubmit}>
                         <div className="g-5">
+                            <p id={styles["errorMsg"]}>{errorMsg}</p>
                             <div className={styles["md-2"]}>
                                 <label htmlFor="itemName" className="form-label">Name:</label>
                                 <input 
