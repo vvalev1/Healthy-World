@@ -12,7 +12,9 @@ const RegisterKeys = {
 }
 
 export default function Register() {
-    const { registerSubmitHandler, errorMsg } = useContext(AuthContext);
+    const { registerSubmitHandler, errorMsg, setErrorMessage } = useContext(AuthContext);
+
+    useEffect(() => {setErrorMessage("")}, []);
 
     const payload = {
         [RegisterKeys.Email]: "",
@@ -41,7 +43,7 @@ export default function Register() {
                                     placeholder="Enter email"
                                     value={values[RegisterKeys.Email]}
                                     onChange={onChange}
-                                    autocomplete="true"  
+                                    autoComplete="true"  
                                 />
                             </div>
                             <div className={styles["md-2"]}>

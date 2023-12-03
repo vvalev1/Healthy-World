@@ -1,5 +1,8 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 import useForm from '../hooks/useForm';
+import Path from '../../paths/paths';
 
 import styles from './Login.module.css';
 import Header from "../Header";
@@ -13,7 +16,9 @@ const LoginFormKeys = {
 
 export default function Login() {
   
-    const { loginSubmitHandler, errorMsg } = useContext(AuthContext);
+    const { loginSubmitHandler, errorMsg, setErrorMessage } = useContext(AuthContext);
+
+    useEffect(() => {setErrorMessage("")}, []);
 
     const payload = {
         [LoginFormKeys.Email]: "",
@@ -56,7 +61,7 @@ export default function Login() {
                                     value={values[LoginFormKeys.Password]}
                                 />
                             </div>
-                        
+                            <p>You have not registered yet? <Link to={Path.Register}>Register here</Link></p>
                         </div>
                         <button type="submit" className="btn btn-primary rounded-pill py-2">Login</button>
                     </form>

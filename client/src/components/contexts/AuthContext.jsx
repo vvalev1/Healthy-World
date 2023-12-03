@@ -19,7 +19,7 @@ export function AuthProvider({
       return {};
   });
   const [errorMessage, setErrorMessage] = useState("");
-    
+
 
   const loginSubmitHandler = async (values) => {
 
@@ -73,7 +73,8 @@ export function AuthProvider({
       setAuth(result);
       navigate(Path.Home);
     } catch (e) {
-      console.log(e.message);
+      errorMessage.error = e.message;
+      // console.log(e.message);
     }
 
   }
@@ -92,7 +93,8 @@ export function AuthProvider({
     email: auth.email,
     isAuthenticated: localStorage.getItem("auth"),
     userId: auth._id,
-    errorMsg: errorMessage
+    errorMsg: errorMessage,
+    setErrorMessage,
 
   };
 
