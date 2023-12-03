@@ -33,7 +33,7 @@ export default function Search() {
                             placeholder="Search by product name"
                             onChange={onChange}
                             value={values["name"]}
-                            autocomplete="true"
+                            autoComplete="true"
                         />
 
                         <button type="submit" className="btn btn-primary rounded-pill py-1"><small className="fa fa-search"></small> Search</button>
