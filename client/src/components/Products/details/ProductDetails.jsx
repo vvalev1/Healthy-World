@@ -16,8 +16,6 @@ export default function Details() {
     const { productId } = useParams();
     const { isAuthenticated, userId } = useContext(AuthContext);
     const [quantity, setQuantity] = useState(0);
-    const [successfulBought, setSuccessfulBought] = useState("");
-
 
 
     useEffect(() => {
@@ -58,17 +56,6 @@ export default function Details() {
 
     };
 
-    const buyProductHandler = () => {
-
-        if (!isAuthenticated) {
-            navigate(Path.Login);
-        }
-
-        buyService.create(productId, userId)
-            .then(() => {setSuccessfulBought("Successfully bought the product!")})
-            .catch((err) => console.log(err))
-
-    }
 
     return (
         <>
@@ -104,7 +91,7 @@ export default function Details() {
                                         />
                                         <button className="btn btn-primary" name="increase" onClick={setQuantityOfProductsToBuy}>+</button>
 
-                                        <Link to={pathToUrl(Path.OrderProduct, { productId })} className="btn btn-primary mx-5" onClick={buyProductHandler}>Buy Now</Link>
+                                        <Link to={pathToUrl(Path.OrderProduct, { productId })} className="btn btn-primary mx-5">Buy Now</Link>
                                     </div>
                                 )}
 
