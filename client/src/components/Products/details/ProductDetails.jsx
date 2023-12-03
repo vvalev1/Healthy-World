@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import * as productService from "../../../services/productService"
-import * as buyService from "../../../services/orderService"
 import Path from "../../../paths/paths";
 import AuthContext from "../../contexts/AuthContext";
 import { pathToUrl } from "../../../utils/pathToUrl";
