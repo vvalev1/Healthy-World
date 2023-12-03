@@ -19,6 +19,7 @@ import EditProduct from "./components/Products/edit/EditProduct";
 import Logout from "./components/Logout";
 import AuthGuard from "./components/guards/AuthGuard";
 import OrderForm from "./components/OrderForm/OrderForm";
+import Search from "./components/search/Search";
 
 
 
@@ -35,6 +36,7 @@ function App() {
           <Route path={Path.Logout} element={<Logout />} />
           <Route path={Path.Products} element={<Products />} />
           <Route path={Path.ProductDetails} element={<Details />} />
+          <Route path={Path.Search} element={<Search />} />
 
         {/* Route guards */}
           <Route element={<AuthGuard />}>

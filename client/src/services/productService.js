@@ -71,6 +71,19 @@ export const getAllByKind = async (productKind) => {
     return result;
 };
 
+export const getAllByName = async (productName) => {
+    
+    const response = await fetch(`${baseUrl}?where=name LIKE ${encodeURIComponent(`"${productName}"`)}`);
+
+    const result = await response.json();
+
+    if(!response.ok) {
+        throw result;
+    }
+ 
+    return result;
+};
+
 
 export const getOne = async (productId) => {
     

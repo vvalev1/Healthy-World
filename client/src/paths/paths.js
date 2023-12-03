@@ -7,6 +7,7 @@ const Path = {
     EditProduct: "/products/edit/:productId",
     ProductDetails: "/products/:productId",
     OrderProduct: "/products/order/:productId",
+    Search: "/products/search",
 
     About: "/about",
     Products: "/products"

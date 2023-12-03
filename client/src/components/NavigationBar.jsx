@@ -40,9 +40,9 @@ export default function NavigationBarComponent() {
 
                     </div>
                     <div className="d-none d-lg-flex ms-2">
-                        <a className="btn-sm-square bg-white rounded-circle ms-3" href="">
+                        <Link to={Path.Search} className="btn-sm-square bg-white rounded-circle ms-3">
                             <small className="fa fa-search text-body"></small>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </nav>

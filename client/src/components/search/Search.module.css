@@ -1,0 +1,40 @@
+#search-page {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+#search-page input {
+    /* background: #ecf0f3; */
+    padding: 20px;
+    padding-left: 20px;
+    height: 30px;
+    /* margin-bottom: 20px; */
+    font-size: 17px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
+    display: block;
+    width: 70%;
+    justify-self: center;
+}
+#search-page button {
+    text-transform: uppercase;
+    width: 15%;
+    height: 44px;
+}
+
+
+#errorMsg {
+    color: red;
+}
+
+#notFoundProduct {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}

@@ -42,7 +42,7 @@ export default function Login() {
                                     placeholder="Enter email" 
                                     onChange={onChange}
                                     value={values[LoginFormKeys.Email]}
-                                    autocomplete="true"
+                                    autoComplete="true"
                                 />
                             </div>
                             <div className={styles["md-2"]}>

@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
 
-import Path from "../../../paths/paths";
-import { pathToUrl } from "../../../utils/pathToUrl";
-
 export default function ProductItem(
     { _id ,name, price, imageUrl }
 ) {

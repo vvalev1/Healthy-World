@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import Header from "../Header";
+
 import * as productService from "../../services/productService";
+
+import Header from "../Header";
 import ProductItem from "./productItem/ProductItem";
+
 export default function Products() {
     const [products, setProducts] = useState([]);
     const [productKind, setProductKind] = useState("allProducts");
@@ -12,8 +15,6 @@ export default function Products() {
 
         setProductKind(pKind);
     }
-
-    // да се направят компоненти за listItem-и
 
     useEffect(() => {
         if(productKind === "allProducts") {
