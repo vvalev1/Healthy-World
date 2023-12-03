@@ -34,8 +34,6 @@ export default function CreateProduct() {
     const {values, onChange, onSubmit} = useForm(createProductSubmitHandler,initialValues);
 
     async function createProductSubmitHandler(values) {
-
-
         
         if(values[CreateProductKeys.ProductName] === "") {
             return setErrorMsg("Product name is required!");
@@ -131,8 +129,9 @@ export default function CreateProduct() {
                                     name={[CreateProductKeys.KindProduct]}
                                     onChange={onChange}
                                     value={values[[CreateProductKeys.KindProduct]]}
+                                    defaultValue={""}
                                 >
-                                    <option value="none"></option>
+                                    <option value="" disabled hidden>Please Choose...</option>
                                     <option value="fruit">Fruit</option>
                                     <option value="vegetable">Vegetable</option>
                                 </select>
