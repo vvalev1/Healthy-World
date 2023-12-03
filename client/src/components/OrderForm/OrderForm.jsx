@@ -55,11 +55,11 @@ export default function OrderForm() {
             <div className="container-fluid bg-light py-4">
                 <div className="container">
                     {successfulOrder && (
-                        <p id="successfulOrder">{successfulOrder}</p>
+                        <p id={styles["successfulOrder"]}>{successfulOrder}</p>
                     )}
 
                     {!successfulOrder && (
-                        <form id={styles["login-page"]} onSubmit={onSubmit}>
+                        <form id={styles["search-page"]} onSubmit={onSubmit}>
                             <div className="g-5 align-items-center">
                                 <p id={styles["errorMsg"]}>{errorMsg}</p>
                                 <div className={styles["md-2"]}>
@@ -71,7 +71,7 @@ export default function OrderForm() {
                                         placeholder="Name"
                                         onChange={onChange}
                                         value={values[OrderFormKeys.Name]}
-                                        autocomplete="true"
+                                        autoComplete="true"
                                     />
                                 </div>
                                 <div className={styles["md-2"]}>
@@ -83,7 +83,7 @@ export default function OrderForm() {
                                         placeholder="Address"
                                         onChange={onChange}
                                         value={values[OrderFormKeys.Address]}
-                                        autocomplete="true"
+                                        autoComplete="true"
                                     />
                                 </div>
                                 <div className={styles["md-2"]}>
@@ -95,7 +95,7 @@ export default function OrderForm() {
                                         placeholder="Phone Number"
                                         onChange={onChange}
                                         value={values[OrderFormKeys.PhoneNumber]}
-                                        autocomplete="true"
+                                        autoComplete="true"
                                     />
                                 </div>
 

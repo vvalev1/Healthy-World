@@ -1,4 +1,4 @@
-#login-page {
+#search-page {
     position: relative;
     width: 500px;
     height: auto;
@@ -8,10 +8,10 @@
     box-sizing: border-box;
     text-align: center;
     background: #2a2b2b;
-    box-shadow: 0px 0px 10px 0px #32485e, -10px -10px 10px #191c21;
+    box-shadow: 0px 0px 10px 0px #32485e, -10px -10px 10px #24282f;
 }
 
-#login-page input {
+#search-page input {
     background: #ecf0f3;
     padding: 20px;
     padding-left: 20px;
@@ -24,12 +24,12 @@
     width: 70%;
     justify-self: center;
 }
-#login-page button {
+#search-page button {
     text-transform: uppercase;
     width: 30%;
 }
 
-#login-page label{
+#search-page label{
     font-weight: bold;
     color: whitesmoke;
     margin-bottom: 0;
@@ -42,4 +42,9 @@ div.md-2 {
 
 #errorMsg {
     color: red;
+}
+
+#successfulOrder {
+    color: green;
+    font-weight: bold;
 }

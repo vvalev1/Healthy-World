@@ -17,7 +17,7 @@ export default function Search() {
             .catch((err) => console.log(err));
     }
 
-    const { values, onChange, onSubmit } = useForm(searchProductHandler,"");
+    const { values, onChange, onSubmit } = useForm(searchProductHandler,{});
 
 
     return (
