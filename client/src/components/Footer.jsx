@@ -20,8 +20,7 @@ export default function Footer() {
                 <div className="col-lg-3 col-md-6">
                     <h4 className="text-light mb-4">Quick Links</h4>
                     <Link className="btn btn-link" to={Path.Products}>Products</Link>
-                    <Link className="btn btn-link" to={Path.Login}>Login</Link>
-                    <Link className="btn btn-link" to={Path.Register}>Register</Link>
+                    <Link className="btn btn-link" to={Path.Home}>Home</Link>
                     <Link className="btn btn-link" to={Path.About}>About Us</Link>
                 </div>
             </div>
