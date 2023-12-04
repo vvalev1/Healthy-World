@@ -1,7 +1,5 @@
 const baseUrl = "http://localhost:3030/users";
 
-const token = localStorage.getItem("auth");
-
 export const login = async (email, password) => {
 
     const response = await fetch(`${baseUrl}/login`, {
@@ -51,7 +49,7 @@ export const logout = async () => {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "X-Authorization": token
+            "X-Authorization": localStorage.getItem("auth")
        }
     });
 };

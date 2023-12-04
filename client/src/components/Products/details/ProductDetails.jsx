@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import * as productService from "../../../services/productService"
+import * as likesService from "../../../services/likesService"
 import Path from "../../../paths/paths";
 import AuthContext from "../../contexts/AuthContext";
 import { pathToUrl } from "../../../utils/pathToUrl";
@@ -15,11 +16,26 @@ export default function Details() {
     const { productId } = useParams();
     const { isAuthenticated, userId } = useContext(AuthContext);
     const [quantity, setQuantity] = useState(0);
+    const [likes, setLikes] = useState(0);
+    const [isUserVoted, setIsUserVoted] = useState(false);
 
 
     useEffect(() => {
         productService.getOne(productId)
             .then((result) => setProduct(result))
+            .catch((err) => console.log(err.message));
+
+        likesService.getAllLikesPerProduct(productId)
+            .then((result) => { 
+                setLikes(result.length); 
+
+                for (const like of result) {
+                    if(like._ownerId === userId) {
+                        setIsUserVoted(true);
+                    }
+                }
+               
+            })
             .catch((err) => console.log(err.message));
     }, [productId]);
 
@@ -54,6 +70,17 @@ export default function Details() {
         }
 
     };
+
+    const likeProductHandler = () => {
+        const likeData = likes + 1;
+
+        likesService.create(productId, likeData)
+            .then(() => {
+                setLikes(likeData);
+                setIsUserVoted(true);
+            })
+            .catch((err) => { console.log(err)});
+    }
 
 
     return (
@@ -99,6 +126,14 @@ export default function Details() {
                                         <>
                                             <Link to={pathToUrl(Path.EditProduct, { productId })} className="btn btn-secondary mx-2 px-4 rounded-pill">Edit</Link>
                                             <button className="btn btn-danger rounded-pill px-4" onClick={deleteProductHandler}>Delete</button>
+                                        </>
+                                    )}
+                                </div>
+                                <div className="mt-4 ">
+                                    <p>The item has {likes} like{likes > 1 ? "s" : ""}.</p>
+                                   {isAuthenticated && userId !== product._ownerId && !isUserVoted && (
+                                        <>
+                                            <button className="btn btn-success rounded-pill px-3" onClick={likeProductHandler}>Like</button>
                                         </>
                                     )}
                                 </div>

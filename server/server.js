@@ -1643,20 +1643,20 @@
     			_updatedOn: 1616237293676
     		}
     	},
-        products: [
-            {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "Carrot",
-                "price": "23",
-                "imageUrl": "https://www.shutterstock.com/image-photo/carrot-isolated-on-white-background-600nw-795704785.jpg",
-                "country": "Bulgaria",
-                "kindProduct": "vegetable",
-                "quantity": "20",
-                "description": "The best carrot from BG!",
-                "_createdOn": 1701614143273,
-                "_id": "d236b099-6cea-46fa-bb85-ef780202a46a"
+        products: { 
+            "d236b099-6cea-46fa-bb85-ef780202a46a": {
+                    "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                    "name": "Carrot",
+                    "price": "23",
+                    "imageUrl": "https://www.shutterstock.com/image-photo/carrot-isolated-on-white-background-600nw-795704785.jpg",
+                    "country": "Bulgaria",
+                    "kindProduct": "vegetable",
+                    "quantity": "20",
+                    "description": "The best carrot from BG!",
+                    "_createdOn": 1701614143273,
+                    "_id": "d236b099-6cea-46fa-bb85-ef780202a46a"
             },
-            {
+            "2f9dac6d-ea11-4628-b13d-f42f14c416e1": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Apple red",
                 "price": "30",
@@ -1668,7 +1668,7 @@
                 "_createdOn": 1701614308700,
                 "_id": "2f9dac6d-ea11-4628-b13d-f42f14c416e1"
             },
-            {
+            "f9de699c-2edb-44f3-abce-8ff3d47119c8": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Apple green",
                 "price": "64",
@@ -1681,7 +1681,7 @@
                 "_id": "f9de699c-2edb-44f3-abce-8ff3d47119c8",
                 "_updatedOn": 1701614373922
             },
-            {
+            "d40fd58e-eec8-468f-b4df-cb66674353d0": {
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "name": "Cabage",
                 "price": "34",
@@ -1694,7 +1694,7 @@
                 "_id": "d40fd58e-eec8-468f-b4df-cb66674353d0",
                 "_updatedOn": 1701621697792
             },
-            {
+            "408e1beb-5099-49ab-8261-fb293c9325ce": {
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "name": "Banana",
                 "price": "67",
@@ -1706,7 +1706,7 @@
                 "_createdOn": 1701622265343,
                 "_id": "408e1beb-5099-49ab-8261-fb293c9325ce"
             },
-            {
+            "6b117b56-59b5-473d-853d-4574ce6f9111": {
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "name": "Strawberry",
                 "price": "55.00",
@@ -1718,7 +1718,7 @@
                 "_createdOn": 1701623400898,
                 "_id": "6b117b56-59b5-473d-853d-4574ce6f9111"
             }
-        ]
+        }
     };
     var rules$1 = {
     	users: {

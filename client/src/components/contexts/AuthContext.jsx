@@ -81,7 +81,6 @@ export function AuthProvider({
 
   const logoutHandler = () => {
     setAuth({});
-    navigate(Path.Home);
     localStorage.removeItem("auth");
   }
 
