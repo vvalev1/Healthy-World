@@ -9,15 +9,16 @@ import useForm from "../hooks/useForm";
 
 export default function Search() {
     const [products, setProducts] = useState([]);
+    
+    const { values, onChange, onSubmit } = useForm(searchProductHandler,{});
 
-    const searchProductHandler = () => {
+    function searchProductHandler() {
         
         productService.getAllByName(values.name)
             .then(results => setProducts(results))
             .catch((err) => console.log(err));
     }
 
-    const { values, onChange, onSubmit } = useForm(searchProductHandler,{});
 
 
     return (
