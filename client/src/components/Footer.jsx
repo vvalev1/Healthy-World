@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Healthy World</a>, All Right Reserved.
+                        &copy; <Link to={Path.Home}>Healthy World</Link>, All Right Reserved.
                     </div>
                     <div className="col-md-6 text-center text-md-end">
                         <div>Designed By <a href="https://htmlcodex.com">HTML Codex</a></div>
