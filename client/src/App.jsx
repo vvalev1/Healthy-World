@@ -16,7 +16,7 @@ import CreateProduct from "./components/Products/create/CreateProduct";
 import Products from "./components/Products/Products";
 import Details from "./components/Products/details/ProductDetails";
 import EditProduct from "./components/Products/edit/EditProduct";
-import Logout from "./components/Logout";
+import Logout from "./components/User/Logout";
 import AuthGuard from "./components/guards/AuthGuard";
 import OrderForm from "./components/OrderForm/OrderForm";
 import Search from "./components/search/Search";
