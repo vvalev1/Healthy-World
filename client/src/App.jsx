@@ -1,5 +1,5 @@
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 
 import { AuthProvider } from "./components/contexts/AuthContext";
