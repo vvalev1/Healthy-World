@@ -129,7 +129,6 @@ export default function CreateProduct() {
                                     name={[CreateProductKeys.KindProduct]}
                                     onChange={onChange}
                                     value={values[[CreateProductKeys.KindProduct]]}
-                                    defaultValue={""}
                                 >
                                     <option value="" disabled hidden>Please Choose...</option>
                                     <option value="fruit">Fruit</option>
