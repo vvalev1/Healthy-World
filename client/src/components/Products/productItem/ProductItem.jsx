@@ -9,7 +9,7 @@ export default function ProductItem(
                         <div className="position-relative bg-light overflow-hidden">
                         <Link to={`/products/${_id}`}><img className="img-fluid w-100" style={{height: "20em"}} src={imageUrl} /></Link>
                         </div>
-                        <div className="text-center p-4">
+                        <div className="text-center p-4 mb-4">
                             <Link to={`/products/${_id}`} className="d-block h5 mb-2">{name}</Link>
                             <span className="text-primary me-1">${price}</span>
                         </div>
