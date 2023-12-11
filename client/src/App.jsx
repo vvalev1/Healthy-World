@@ -20,6 +20,7 @@ import Logout from "./components/User/Logout";
 import AuthGuard from "./components/guards/AuthGuard";
 import OrderForm from "./components/OrderForm/OrderForm";
 import Search from "./components/search/Search";
+import AuthGuardLoginAndRegister from "./components/guards/AuthGuardLoginAndRegister";
 
 
 
@@ -31,18 +32,23 @@ function App() {
         <Routes>
           <Route path={Path.Home} element={<HomeComponent />} />
           <Route path={Path.About} element={<About />} />
-          <Route path={Path.Login} element={<Login />} />
-          <Route path={Path.Register} element={<Register />} />
           <Route path={Path.Logout} element={<Logout />} />
           <Route path={Path.Products} element={<Products />} />
           <Route path={Path.ProductDetails} element={<Details />} />
           <Route path={Path.Search} element={<Search />} />
+
+          {/* route gruard for Authenticated users - not enable to view pages Login and Register */}
+        <Route element={<AuthGuardLoginAndRegister/>}>
+              <Route path={Path.Login} element={<Login />} />
+              <Route path={Path.Register} element={<Register />} />
+        </Route>
 
         {/* Route guards */}
           <Route element={<AuthGuard />}>
               <Route path={Path.CreateProduct} element={<CreateProduct />} />
               <Route path={Path.EditProduct} element={<EditProduct />} />
               <Route path={Path.OrderProduct} element={<OrderForm />} />
+
           </Route>
 
           <Route path="*" element={<NotFound />} />

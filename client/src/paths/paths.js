@@ -8,7 +8,7 @@ const Path = {
     ProductDetails: "/products/:productId",
     OrderProduct: "/products/order/:productId",
     Search: "/products/search",
-
+    NotFound: "/404",
     About: "/about",
     Products: "/products"
 }

@@ -13,11 +13,13 @@ export function AuthProvider({
     children,
 }) {
   const navigate = useNavigate();
+
   const [auth, setAuth] = useState(() => {
-      localStorage.removeItem("auth");
+      // localStorage.removeItem("auth");
 
       return {};
   });
+
   const [errorMessage, setErrorMessage] = useState("");
 
 
