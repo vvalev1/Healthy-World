@@ -1,4 +1,4 @@
-import { createContext, useEffect } from "react";
+import { createContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -41,8 +41,8 @@ export function AuthProvider({
       setAuth(result);
       navigate(Path.Home);
     } catch (e) {
-      errorMessage.error = e.message;
-      // console.log(e.message);
+        setErrorMessage("Email or password is incorrect!");
+        // setErrorMessage(e.message);
     }
     
   }
@@ -73,8 +73,9 @@ export function AuthProvider({
       setAuth(result);
       navigate(Path.Home);
     } catch (e) {
-      errorMessage.error = e.message;
-      // console.log(e.message);
+      
+      // setErrorMessage("Email or password is incorrect!");
+      setErrorMessage(e.message);
     }
 
   }
