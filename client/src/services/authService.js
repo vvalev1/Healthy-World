@@ -45,11 +45,16 @@ export const register = async (email, password) => {
 }
 
 export const logout = async () => {
+
+    const token = JSON.parse(localStorage.getItem("auth")).accessToken;
+
+    console.log(token);
+
     return await fetch(`${baseUrl}/logout`, {
         method: "GET",
         headers: {
             "content-type": "application/json",
-            "X-Authorization": localStorage.getItem("auth")
+            "X-Authorization": token
        }
     });
 };

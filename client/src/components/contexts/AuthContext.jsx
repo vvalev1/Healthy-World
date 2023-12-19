@@ -2,6 +2,8 @@ import { createContext } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import usePersistedState from "../hooks/usePersistedState";
+
 import * as authService from "../../services/authService";
 import Path from "../../paths/paths"
 
@@ -14,11 +16,7 @@ export function AuthProvider({
 }) {
   const navigate = useNavigate();
 
-  const [auth, setAuth] = useState(() => {
-      // localStorage.removeItem("auth");
-
-      return {};
-  });
+  const [auth, setAuth] = usePersistedState("auth", {});
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -39,7 +37,7 @@ export function AuthProvider({
     try {
       result = await authService.login(values.email, values.password);
       const token = result.accessToken;
-      localStorage.setItem("auth", token);
+      
       setAuth(result);
       navigate(Path.Home);
     } catch (e) {
@@ -71,7 +69,7 @@ export function AuthProvider({
     try {
       result = await authService.register(values.email, values.password);
       const token = result.accessToken;
-      localStorage.setItem("auth", token);
+
       setAuth(result);
       navigate(Path.Home);
     } catch (e) {
@@ -93,12 +91,14 @@ export function AuthProvider({
     logoutHandler,
     username: auth.username || auth.email,
     email: auth.email,
-    isAuthenticated: localStorage.getItem("auth"),
+    isAuthenticated: auth.accessToken,
     userId: auth._id,
     errorMsg: errorMessage,
     setErrorMessage,
 
   };
+
+  console.log(auth.accessToken)
 
   return (
     <AuthContext.Provider value={values}>
